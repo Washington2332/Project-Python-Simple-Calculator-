@@ -1,37 +1,67 @@
+#defining addition in the python project
 def add(x, y):
     return x + y
- 
-
+#completion of using addition
+#defining subtraction
 def subtract(x, y):
     return x - y
- 
+#completion of subtraction(output)
+#defining multiplication
 def multiply(x, y):
     return x * y
- 
+#defining division
 def divide(x, y):
-    if y == 0:
-        return "Error! Division by zero."
+    try:
+        return x/y
+    except:
+        ZeroDivisionError
+        #if error occurs during application (from num1=0)
+        return "Can't subtract by zero"
         return x / y
- 
-print("Select operation:")
-print("1.Add")
-print("2.Subtract")
-print("3.Multiply")
-print("4.Divide")
- 
-choice = input("Enter choice(1/2/3/4): ")
- 
+def power(x,y):
+    return x**y
+def root(x,y):
+    return x**1/y
+def percent(x):
+    return x*100
+
+
+print("add")
+print("sub")
+print("mult")
+print("div")
+print("exp")
+print("root")
+#ordering selections to display for user
+#user input selections
+choice = input("Type your operation, please:")
+#v-allow users to set particular numbers in each value
 num1 = float(input("Enter first number: "))
 num2 = float(input("Enter second number: "))
- 
-if choice == '1':
+#user input giving num1/num2
+if choice == 'add':
     print(f"{num1} + {num2} = {add(num1, num2)}")
-elif choice == '2':
+    #what happens if selection from user input is the word add
+    print(num1,"added to", num2,"is", add(num1,num2))
+elif choice == 'sub':
     print(f"{num1} - {num2} = {subtract(num1, num2)}")
-elif choice == '3':
+    print(num1, "subtracted by", num2, "is", subtract(num1,num2))
+elif choice == 'mult':
     print(f"{num1} * {num2} = {multiply(num1, num2)}")
-elif choice == '4':
+    print(num1, "multiplied by", num2 ,"is", multiply(num1,num2))
+    #displaying the arithmetic function and then displaying it as sentence
+elif choice == 'div':
     print(f"{num1} / {num2} = {divide(num1, num2)}")
+    print(num1,"divided by", num2,"is",divide(num1, num2) )
+elif choice=='exp':
+    print(f"{num1}**{num2}={pow(num1,num2)}")
+    print(num1, "to the", num2, "power is",power(num1,num2) )
+elif choice=='root':
+    print(f"{num1}**1/{num2}={root(num1,num2)}")
+    print("The", num2 ,"root of ", num1," is", root(num1,num2))
+    
+elif choice=='percent':
+    print("only uses first number")
+    print (f"{num1}*100={percent(num1)}")
 else:
-    print("Invalid input")
-
+    print("not a supported operation! Sorry")
