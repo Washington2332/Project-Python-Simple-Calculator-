@@ -34,7 +34,8 @@ print("exp")
 print("root")
 #ordering selections to display for user
 #user input selections
-choice = input("Type your operation, please:")
+choice = input("Type which one of the operations you want to use, please:")
+#changed to improve readability for users
 #v-allow users to set particular numbers in each value
 num1 = float(input("Enter first number: "))
 num2 = float(input("Enter second number: "))
